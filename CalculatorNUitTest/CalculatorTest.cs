@@ -230,6 +230,30 @@ namespace CalculatorNUitTest
 
             Assert.That(() => uut.divide(0), Throws.TypeOf<ArgumentException>());
         }
+        [TestCase(1, 2, 3, 6)]
+        [TestCase(1, -2, 3, 2)]
+        [TestCase(-1, -2, 3, 0)]
+        [TestCase(1, 2, -3, 0)]
+        [TestCase(-1, -2, -3, -6)]
+        public void AddTest_OverloadAccumulatorTest(double a, double b, double c, double expected)
+        {
+            var uut = new Calculator();
+            uut.Add(a, b);
+            Assert.That(expected, Is.EqualTo(uut.Add(c)));
+        }
+
+        [TestCase(1, 2, 3, -4)]
+        [TestCase(-1, 2, 3, -6)]
+        [TestCase(-1, -2, 3, -2)]
+        [TestCase(1, 2, -3, 2)]
+        [TestCase(-1, -2, -3, 4)]
+        public void SubstractTest_OverloadAccumulatorTest(double a, double b, double c, double expected)
+        {
+            var uut = new Calculator();
+            uut.Subtract(a, b);
+            Assert.That(expected, Is.EqualTo(uut.Substract(c)));
+        }
     }
+
 
 }
