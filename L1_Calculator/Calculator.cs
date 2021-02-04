@@ -34,5 +34,9 @@ namespace L1_Calculator
         }
 
 
+        public void clear()
+        {
+        }
+
     }
 }
