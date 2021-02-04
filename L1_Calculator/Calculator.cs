@@ -18,10 +18,12 @@ namespace L1_Calculator
 
         public double Add(double a, double b)
         {
+            Accumulator = a + b; 
             return a + b;
         }
         public double Subtract(double a, double b)
         {
+            Accumulator = a - b;
             return a - b;
         }
 
@@ -59,6 +61,22 @@ namespace L1_Calculator
             Accumulator = result;
             return result;
         }
+
+        public void clear()
+        {
+            Accumulator = 0;
+        }
+
+        public double Add(double added)
+        {
+            return Accumulator += added;
+        }
+
+        public double Substract(double substractor)
+        {
+            return Accumulator -= substractor;
+        }
+
 
     }
 }
