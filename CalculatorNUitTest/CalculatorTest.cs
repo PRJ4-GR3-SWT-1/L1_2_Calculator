@@ -173,6 +173,18 @@ namespace CalculatorNUitTest
         }
 
 
+        [TestCase(2,2,1)]
+        [TestCase(-2, 2, -1)]
+        [TestCase(-2, -2, 1)]
+        [TestCase(2, -2, -1)]
+        public void Divider_TestingAllFortegn(double a, double b,double expectedresult)
+        {
+            var uut = new Calculator();
+
+            Assert.That(expectedresult, Is.EqualTo(uut.divide(a, b)));
+        }
+
+
 
     }
 

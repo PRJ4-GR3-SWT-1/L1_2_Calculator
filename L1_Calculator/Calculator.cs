@@ -9,9 +9,12 @@ namespace L1_Calculator
             Console.WriteLine("Hello World!");
         }
 
-        public Calculator()
-        {
-        }
+        public double Accumulator{get; private set; }
+
+    public Calculator()
+    {
+        Accumulator = 0;
+    }
 
         public double Add(double a, double b)
         {
@@ -33,6 +36,11 @@ namespace L1_Calculator
             return Math.Pow(x, exp);
         }
 
+        public double divide(double a, double b)
+        {
+            double result = (a / b);
+            return result;
+        }
 
     }
 }
