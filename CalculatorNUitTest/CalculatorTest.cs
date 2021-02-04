@@ -54,11 +54,11 @@ namespace CalculatorNUitTest
         {
             var uut = new Calculator();
 
-            double a = 1.15234;
-            double b = 2.16454;
-            double result = 3.31688;
+            double a = 1.11;
+            double b = 2.12;
+            double result = 3.2300000000000004;
 
-            Assert.That(result, Is.EqualTo(uut.Add(a, b)));
+            Assert.That(uut.Add(a, b), Is.EqualTo(result));
         }
 
 
@@ -103,9 +103,9 @@ namespace CalculatorNUitTest
         {
             var uut = new Calculator();
 
-            double a = 1.15234;
-            double b = 2.16454;
-            double result = -1.0122;
+            double a = 1.11;
+            double b = 2.11;
+            double result = -0.99999999999999978;
 
             Assert.That(result, Is.EqualTo(uut.Subtract(a, b)));
         }
