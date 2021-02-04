@@ -51,12 +51,14 @@ namespace L1_Calculator
 
         public double divide(double a, double b)
         {
+            if (b == 0) throw new ArgumentException("You can't divide by 0");
             double result = (a / b);
             Accumulator = result;
             return result;
         }
         public double divide(double aEnd)
         {
+            if (aEnd == 0) throw new ArgumentException("You can't divide by 0");
             double result = (Accumulator / aEnd);
             Accumulator = result;
             return result;

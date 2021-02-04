@@ -1,3 +1,4 @@
+using System;
 using System.Xml.Serialization;
 using NUnit.Framework;
 using L1_Calculator;
@@ -184,8 +185,51 @@ namespace CalculatorNUitTest
             Assert.That(expectedresult, Is.EqualTo(uut.divide(a, b)));
         }
 
+        [Test]
+        public void MultiplyOverload_2times2times2_Equals8()
+        {
+            var uut = new Calculator();
 
+            double result = 0;
+            uut.Multiply(2, 2);
+            result = uut.Multiply(2);
+            Assert.That(result,Is.EqualTo(8));
+        }
+        [Test]
+        public void PowerOverload_2exp2exp2_Equals16()
+        {
+            var uut = new Calculator();
 
+            double result = 0;
+            uut.Power(2, 2);
+            result = uut.Power(2);
+            Assert.That(result, Is.EqualTo(16));
+        }
+        [Test]
+        public void divideOverload_2div2div2_Equals05()
+        {
+            var uut = new Calculator();
+
+            double result = 0;
+            uut.divide(2, 2);
+            result = uut.divide(2);
+            Assert.That(result, Is.EqualTo(0.5));
+        }
+
+        [Test]
+        public void divide_divideWithZero()
+        {
+            var uut = new Calculator();
+
+            Assert.That(() => uut.divide(1,0),Throws.TypeOf<ArgumentException>());
+        }
+        [Test]
+        public void divideOverload_divideWithZero()
+        {
+            var uut = new Calculator();
+
+            Assert.That(() => uut.divide(0), Throws.TypeOf<ArgumentException>());
+        }
     }
 
 }
