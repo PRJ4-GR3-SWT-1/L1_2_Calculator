@@ -18,21 +18,25 @@ namespace L1_Calculator
 
         public double Add(double a, double b)
         {
+            Accumulator = a + b; 
             return a + b;
         }
 
         public double Subtract(double a, double b)
         {
+            Accumulator = a - b;
             return a - b;
         }
 
         public double Multiply(double a, double b)
         {
+            Accumulator = a * b;
             return a * b;
         }
 
         public double Power(double x, double exp)
         {
+            Accumulator = Math.Pow(x, exp);
             return Math.Pow(x, exp);
         }
 
@@ -44,7 +48,19 @@ namespace L1_Calculator
 
         public void clear()
         {
+            Accumulator = 0;
         }
+
+        public double Add(double added)
+        {
+            return Accumulator += added;
+        }
+
+        public double Substract(double substractor)
+        {
+            return Accumulator -= substractor;
+        }
+
 
     }
 }
