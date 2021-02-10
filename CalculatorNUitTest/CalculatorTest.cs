@@ -7,17 +7,18 @@ namespace CalculatorNUitTest
 {
     public class CalculatorTests
     {
+        private Calculator uut;
         [SetUp]
         public void Setup()
         {
-            
+            uut = new Calculator();
 
         }
 
         [Test]
         public void Add_TestAddTwoNumbers()
         {
-            var uut = new Calculator();
+            
 
             double a = 1;
             double b = 2;
@@ -29,7 +30,6 @@ namespace CalculatorNUitTest
         [Test]
         public void Add_TestAddTwoNegativeNumbers()
         {
-            var uut = new Calculator();
 
             double a = -1;
             double b = -2;
@@ -41,7 +41,6 @@ namespace CalculatorNUitTest
         [Test]
         public void Add_TestAddTwoNumbersOnePosOneNegative()
         {
-            var uut = new Calculator();
 
             double a = 1;
             double b = -2;
@@ -53,7 +52,6 @@ namespace CalculatorNUitTest
         [Test]
         public void Add_TestAddTwoDoubles()
         {
-            var uut = new Calculator();
 
             double a = 1.11;
             double b = 2.12;
@@ -66,7 +64,6 @@ namespace CalculatorNUitTest
         [Test]
         public void Substract_TestSubstractTwoNumbers()
         {
-            var uut = new Calculator();
 
             double a = 5;
             double b = 2;
@@ -78,7 +75,6 @@ namespace CalculatorNUitTest
         [Test]
         public void Substract_TestSubstractTwoNegativeNumbers()
         {
-            var uut = new Calculator();
 
             double a = -5;
             double b = -2;
@@ -90,7 +86,6 @@ namespace CalculatorNUitTest
         [Test]
         public void Substract_TestSubstractTwoNumbersOnePosOneNeg()
         {
-            var uut = new Calculator();
 
             double a = 5;
             double b = -2;
@@ -102,7 +97,6 @@ namespace CalculatorNUitTest
         [Test]
         public void Substract_TestSubstractTwoDoubles()
         {
-            var uut = new Calculator();
 
             double a = 1.11;
             double b = 2.11;
@@ -115,7 +109,6 @@ namespace CalculatorNUitTest
         [Test]
         public void Multiply_TestMultiTwoNumbers()
         {
-            var uut = new Calculator();
 
             double a = 5;
             double b = 2;
@@ -127,7 +120,6 @@ namespace CalculatorNUitTest
         [Test]
         public void Multiply_TestMultiTwoNegativeNumbers()
         {
-            var uut = new Calculator();
 
             double a = -5;
             double b = -2;
@@ -139,7 +131,6 @@ namespace CalculatorNUitTest
         [Test]
         public void Multiply_TestMultiTwoNumbersOnePosOneNeg()
         {
-            var uut = new Calculator();
 
             double a = -5;
             double b = 2;
@@ -151,7 +142,6 @@ namespace CalculatorNUitTest
         [Test]
         public void Multiply_TestMultiTwoDoubles()
         {
-            var uut = new Calculator();
 
             double a = 1.15234;
             double b = 2.16454;
@@ -164,7 +154,6 @@ namespace CalculatorNUitTest
         [Test]
         public void Power_OneNumberLiftedInPower()
         {
-            var uut = new Calculator();
 
             double x = 5;
             double exp = 2;
@@ -180,7 +169,6 @@ namespace CalculatorNUitTest
         [TestCase(2, -2, -1)]
         public void Divider_TestingAllFortegn(double a, double b,double expectedresult)
         {
-            var uut = new Calculator();
 
             Assert.That(expectedresult, Is.EqualTo(uut.divide(a, b)));
         }
@@ -188,7 +176,6 @@ namespace CalculatorNUitTest
         [Test]
         public void MultiplyOverload_2times2times2_Equals8()
         {
-            var uut = new Calculator();
 
             double result = 0;
             uut.Multiply(2, 2);
@@ -198,7 +185,6 @@ namespace CalculatorNUitTest
         [Test]
         public void PowerOverload_2exp2exp2_Equals16()
         {
-            var uut = new Calculator();
 
             double result = 0;
             uut.Power(2, 2);
@@ -208,7 +194,6 @@ namespace CalculatorNUitTest
         [Test]
         public void divideOverload_2div2div2_Equals05()
         {
-            var uut = new Calculator();
 
             double result = 0;
             uut.divide(2, 2);
@@ -219,14 +204,12 @@ namespace CalculatorNUitTest
         [Test]
         public void divide_divideWithZero()
         {
-            var uut = new Calculator();
 
             Assert.That(() => uut.divide(1,0),Throws.TypeOf<ArgumentException>());
         }
         [Test]
         public void divideOverload_divideWithZero()
         {
-            var uut = new Calculator();
 
             Assert.That(() => uut.divide(0), Throws.TypeOf<ArgumentException>());
         }
@@ -237,7 +220,6 @@ namespace CalculatorNUitTest
         [TestCase(-1, -2, -3, -6)]
         public void AddTest_OverloadAccumulatorTest(double a, double b, double c, double expected)
         {
-            var uut = new Calculator();
             uut.Add(a, b);
             Assert.That(expected, Is.EqualTo(uut.Add(c)));
         }
@@ -247,9 +229,8 @@ namespace CalculatorNUitTest
         [TestCase(-1, -2, 3, -2)]
         [TestCase(1, 2, -3, 2)]
         [TestCase(-1, -2, -3, 4)]
-        public void SubstractTest_OverloadAccumulatorTest(double a, double b, double c, double expected)
+        public void SubtractTest_OverloadAccumulatorTest(double a, double b, double c, double expected)
         {
-            var uut = new Calculator();
             uut.Subtract(a, b);
             Assert.That(expected, Is.EqualTo(uut.Substract(c)));
         }
