@@ -218,6 +218,7 @@ namespace CalculatorNUitTest
         [TestCase(-1, -2, 3, 0)]
         [TestCase(1, 2, -3, 0)]
         [TestCase(-1, -2, -3, -6)]
+        [TestCase(-1, 2, -3, -2)]
         public void AddTest_OverloadAccumulatorTest(double a, double b, double c, double expected)
         {
             uut.Add(a, b);
