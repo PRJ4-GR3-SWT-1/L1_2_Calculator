@@ -16,7 +16,7 @@ namespace CalculatorNUitTest
         }
 
         [Test]
-        public void Add_TestAddTwoNumbers()
+        public void Add_AddTwoNumbers_SumIsCorrect()
         {
             
 
@@ -28,7 +28,7 @@ namespace CalculatorNUitTest
         }
 
         [Test]
-        public void Add_TestAddTwoNegativeNumbers()
+        public void Add_AddTwoNegativeNumbers_SumIsCorrect()
         {
 
             double a = -1;
@@ -39,7 +39,7 @@ namespace CalculatorNUitTest
         }
 
         [Test]
-        public void Add_TestAddTwoNumbersOnePosOneNegative()
+        public void Add_AddTwoNumbersOnePosOneNegative_SumIsCorrect()
         {
 
             double a = 1;
@@ -50,7 +50,7 @@ namespace CalculatorNUitTest
         }
 
         [Test]
-        public void Add_TestAddTwoDoubles()
+        public void Add_AddTwoDoubles_SumIsCorrect()
         {
 
             double a = 1.11;
@@ -62,7 +62,7 @@ namespace CalculatorNUitTest
 
 
         [Test]
-        public void Substract_TestSubstractTwoNumbers()
+        public void Subtract_SubtractTwoInts_SumIsCorrect()
         {
 
             double a = 5;
@@ -73,7 +73,7 @@ namespace CalculatorNUitTest
         }
 
         [Test]
-        public void Substract_TestSubstractTwoNegativeNumbers()
+        public void Substract_SubtractTwoNegativeNumbers_SumIsCorrect()
         {
 
             double a = -5;
@@ -84,7 +84,7 @@ namespace CalculatorNUitTest
         }
 
         [Test]
-        public void Substract_TestSubstractTwoNumbersOnePosOneNeg()
+        public void Subtract_TestSubtractTwoNumbersOnePosOneNeg_SumIsCorrect()
         {
 
             double a = 5;
@@ -95,7 +95,7 @@ namespace CalculatorNUitTest
         }
 
         [Test]
-        public void Substract_TestSubstractTwoDoubles()
+        public void Subtract_TestSubtractTwoDoubles_SumIsCorrect()
         {
 
             double a = 1.11;
@@ -107,7 +107,7 @@ namespace CalculatorNUitTest
 
 
         [Test]
-        public void Multiply_TestMultiTwoNumbers()
+        public void Multiply_MultiTwoNumbers_ProductIsCorrect()
         {
 
             double a = 5;
@@ -118,7 +118,7 @@ namespace CalculatorNUitTest
         }
 
         [Test]
-        public void Multiply_TestMultiTwoNegativeNumbers()
+        public void Multiply_MultiTwoNegativeNumbers_ProductIsCorrect()
         {
 
             double a = -5;
@@ -129,7 +129,7 @@ namespace CalculatorNUitTest
         }
 
         [Test]
-        public void Multiply_TestMultiTwoNumbersOnePosOneNeg()
+        public void Multiply_MultiTwoNumbersOnePosOneNeg_ProductIsCorrect()
         {
 
             double a = -5;
@@ -140,7 +140,7 @@ namespace CalculatorNUitTest
         }
 
         [Test]
-        public void Multiply_TestMultiTwoDoubles()
+        public void Multiply_MultiTwoDoubles_ProductIsCorrect()
         {
 
             double a = 1.15234;
@@ -152,7 +152,7 @@ namespace CalculatorNUitTest
 
 
         [Test]
-        public void Power_OneNumberLiftedInPower()
+        public void Power_OneNumberLiftedInPower_ResultIsCorrect()
         {
 
             double x = 5;
@@ -167,7 +167,7 @@ namespace CalculatorNUitTest
         [TestCase(-2, 2, -1)]
         [TestCase(-2, -2, 1)]
         [TestCase(2, -2, -1)]
-        public void Divider_TestingAllFortegn(double a, double b,double expectedresult)
+        public void Divide_TwoNumbers_ResultIsCorrect(double a, double b,double expectedresult)
         {
 
             Assert.That(expectedresult, Is.EqualTo(uut.divide(a, b)));
@@ -192,7 +192,7 @@ namespace CalculatorNUitTest
             Assert.That(result, Is.EqualTo(16));
         }
         [Test]
-        public void divideOverload_2div2div2_Equals05()
+        public void DivideOverload_2div2div2_Equals05()
         {
 
             double result = 0;
@@ -202,13 +202,13 @@ namespace CalculatorNUitTest
         }
 
         [Test]
-        public void divide_divideWithZero()
+        public void Divide_DivideWithZero_ExceptionIsThrown()
         {
 
             Assert.That(() => uut.divide(1,0),Throws.TypeOf<ArgumentException>());
         }
         [Test]
-        public void divideOverload_divideWithZero()
+        public void DivideOverload_DivideWithZero_ExceptionIsThrown()
         {
 
             Assert.That(() => uut.divide(0), Throws.TypeOf<ArgumentException>());
@@ -219,7 +219,7 @@ namespace CalculatorNUitTest
         [TestCase(1, 2, -3, 0)]
         [TestCase(-1, -2, -3, -6)]
         [TestCase(-1, 2, -3, -2)]
-        public void AddTest_OverloadAccumulatorTest(double a, double b, double c, double expected)
+        public void Add_OverloadAccumulator_ResultIsCorrect(double a, double b, double c, double expected)
         {
             uut.Add(a, b);
             Assert.That(expected, Is.EqualTo(uut.Add(c)));
@@ -230,7 +230,7 @@ namespace CalculatorNUitTest
         [TestCase(-1, -2, 3, -2)]
         [TestCase(1, 2, -3, 2)]
         [TestCase(-1, -2, -3, 4)]
-        public void SubtractTest_OverloadAccumulatorTest(double a, double b, double c, double expected)
+        public void Subtract_OverloadAccumulator_ResultIsCorrect(double a, double b, double c, double expected)
         {
             uut.Subtract(a, b);
             Assert.That(expected, Is.EqualTo(uut.Substract(c)));
