@@ -161,6 +161,16 @@ namespace CalculatorNUitTest
 
             Assert.That(result, Is.EqualTo(uut.Power(x,exp)));
         }
+        [Test]
+        public void Power_OneNumberLiftedInNegativePower_ResultIsCorrect()
+        {
+
+            double x = 5;
+            double exp = -2;
+            double result = 0.04;
+
+            Assert.That(result, Is.EqualTo(uut.Power(x, exp)));
+        }
 
 
         [TestCase(2,2,1)]
