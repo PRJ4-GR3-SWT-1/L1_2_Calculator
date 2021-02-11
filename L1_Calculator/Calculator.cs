@@ -4,7 +4,10 @@ namespace L1_Calculator
 {
     public class Calculator
     {
-
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello World!");
+        }
 
         public double Accumulator{get; private set; }
 
