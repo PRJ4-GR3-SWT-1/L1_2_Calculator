@@ -56,8 +56,8 @@ namespace CalculatorNUitTest
         {
 
             double a = 1.11;
-            double b = 2.12;
-            double result = 3.2300000000000004;
+            double b = 2.13;
+            double result = 3.24;
 
             Assert.That(uut.Add(a, b), Is.EqualTo(result));
         }
@@ -101,9 +101,9 @@ namespace CalculatorNUitTest
         public void Subtract_TestSubtractTwoDoubles_SumIsCorrect()
         {
 
-            double a = 1.11;
-            double b = 2.11;
-            double result = -0.99999999999999978;
+            double a = 1.12;
+            double b = 2.12;
+            double result = -1;
 
             Assert.That(result, Is.EqualTo(uut.Subtract(a, b)));
         }
@@ -189,6 +189,12 @@ namespace CalculatorNUitTest
             Assert.That(expectedresult, Is.EqualTo(uut.divide(a, b)));
         }
 
+        [Test]
+        public void Divide_DivideWithZero_ExceptionIsThrown()
+        {
+
+            Assert.That(() => uut.divide(1, 0), Throws.TypeOf<ArgumentException>());
+        }
         //*************** Overload Multiply *************** 
 
         [Test]
@@ -225,12 +231,7 @@ namespace CalculatorNUitTest
             Assert.That(result, Is.EqualTo(0.5));
         }
 
-        [Test]
-        public void Divide_DivideWithZero_ExceptionIsThrown()
-        {
 
-            Assert.That(() => uut.divide(1,0),Throws.TypeOf<ArgumentException>());
-        }
         [Test]
         public void DivideOverload_DivideWithZero_ExceptionIsThrown()
         {
