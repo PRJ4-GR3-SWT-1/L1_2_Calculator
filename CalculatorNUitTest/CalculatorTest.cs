@@ -176,6 +176,16 @@ namespace CalculatorNUitTest
 
             Assert.That(result, Is.EqualTo(uut.Power(x, exp)));
         }
+        [Test]
+        public void Power_OneNegativeNumberLiftedInPower_ResultIsCorrect()
+        {
+
+            double x = -5;
+            double exp = 2;
+            double result = 25;
+
+            Assert.That(result, Is.EqualTo(uut.Power(x, exp)));
+        }
 
         //*************** Divide *************** 
 
@@ -210,6 +220,24 @@ namespace CalculatorNUitTest
             double result = 0;
             uut.Power(2, 2);
             result = uut.Power(2);
+            Assert.That(result, Is.EqualTo(16));
+        }
+        [Test]
+        public void PowerOverload_2expNegative2exp2_Equals16()
+        {
+
+            double result = 0;
+            uut.Power(2, -2);
+            result = uut.Power(2);
+            Assert.That(result, Is.EqualTo(0.0625));
+        }
+        [Test]
+        public void PowerOverload_Negative2expNegative2expNegative2_Equals16()
+        {
+
+            double result = 0;
+            uut.Power(-2, -2);
+            result = uut.Power(-2);
             Assert.That(result, Is.EqualTo(16));
         }
 
