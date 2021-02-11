@@ -206,6 +206,25 @@ namespace CalculatorNUitTest
             result = uut.Multiply(2);
             Assert.That(result,Is.EqualTo(8));
         }
+        [Test]
+        public void MultiplyOverload_2times2times1_Equals4()
+        {
+
+            double result = 0;
+            uut.Multiply(2, 2);
+            result = uut.Multiply(1);
+            Assert.That(result, Is.EqualTo(4));
+        }
+
+        [Test]
+        public void MultiplyOverload_2times2times0_Equals0()
+        {
+
+            double result = 0;
+            uut.Multiply(2, 2);
+            result = uut.Multiply(0);
+            Assert.That(result, Is.EqualTo(0));
+        }
 
         //*************** Overload Power *************** 
 
@@ -231,6 +250,15 @@ namespace CalculatorNUitTest
             Assert.That(result, Is.EqualTo(0.5));
         }
 
+        [Test]
+        public void DivideOverload_10div2divMinus2_Equals05()
+        {
+
+            double result = 0;
+            uut.divide(10, 2);
+            result = uut.divide(-2);
+            Assert.That(result, Is.EqualTo(-2.5));
+        }
 
         [Test]
         public void DivideOverload_DivideWithZero_ExceptionIsThrown()
@@ -238,6 +266,8 @@ namespace CalculatorNUitTest
 
             Assert.That(() => uut.divide(0), Throws.TypeOf<ArgumentException>());
         }
+
+       
 
 
         //*************** Overload Accumulator *************** 
