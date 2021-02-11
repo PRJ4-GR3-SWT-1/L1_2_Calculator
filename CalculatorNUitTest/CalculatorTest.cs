@@ -15,6 +15,8 @@ namespace CalculatorNUitTest
 
         }
 
+        //*************** Add ***************
+
         [Test]
         public void Add_AddTwoNumbers_SumIsCorrect()
         {
@@ -60,6 +62,7 @@ namespace CalculatorNUitTest
             Assert.That(uut.Add(a, b), Is.EqualTo(result));
         }
 
+        //*************** Substract ***************
 
         [Test]
         public void Subtract_SubtractTwoInts_SumIsCorrect()
@@ -105,6 +108,7 @@ namespace CalculatorNUitTest
             Assert.That(result, Is.EqualTo(uut.Subtract(a, b)));
         }
 
+        //*************** Multiply ***************
 
         [Test]
         public void Multiply_MultiTwoNumbers_ProductIsCorrect()
@@ -150,6 +154,7 @@ namespace CalculatorNUitTest
             Assert.That(result, Is.EqualTo(uut.Multiply(a, b)));
         }
 
+        //*************** Power *************** 
 
         [Test]
         public void Power_OneNumberLiftedInPower_ResultIsCorrect()
@@ -172,6 +177,7 @@ namespace CalculatorNUitTest
             Assert.That(result, Is.EqualTo(uut.Power(x, exp)));
         }
 
+        //*************** Divide *************** 
 
         [TestCase(2,2,1)]
         [TestCase(-2, 2, -1)]
@@ -183,6 +189,8 @@ namespace CalculatorNUitTest
             Assert.That(expectedresult, Is.EqualTo(uut.divide(a, b)));
         }
 
+        //*************** Overload Multiply *************** 
+
         [Test]
         public void MultiplyOverload_2times2times2_Equals8()
         {
@@ -192,6 +200,9 @@ namespace CalculatorNUitTest
             result = uut.Multiply(2);
             Assert.That(result,Is.EqualTo(8));
         }
+
+        //*************** Overload Power *************** 
+
         [Test]
         public void PowerOverload_2exp2exp2_Equals16()
         {
@@ -201,6 +212,9 @@ namespace CalculatorNUitTest
             result = uut.Power(2);
             Assert.That(result, Is.EqualTo(16));
         }
+
+        //*************** Overload Divide *************** 
+
         [Test]
         public void DivideOverload_2div2div2_Equals05()
         {
@@ -223,6 +237,10 @@ namespace CalculatorNUitTest
 
             Assert.That(() => uut.divide(0), Throws.TypeOf<ArgumentException>());
         }
+
+
+        //*************** Overload Accumulator *************** 
+
         [TestCase(1, 2, 3, 6)]
         [TestCase(1, -2, 3, 2)]
         [TestCase(-1, -2, 3, 0)]
